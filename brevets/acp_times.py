@@ -26,7 +26,11 @@ def open_time(control_dist_km, brevet_dist_km, brevet_start_time):
        An arrow object indicating the control open time.
        This will be in the same time zone as the brevet start time.
     """
-    return arrow.now()
+    #total_distance_km = brevet_dist_km - control_dist_km
+    new_arrow = brevet_start_time
+    change = control_dist_km / 34
+    new_arrow = new_arrow.shift(hours=+change)
+    return new_arrow
 
 
 def close_time(control_dist_km, brevet_dist_km, brevet_start_time):
@@ -41,4 +45,7 @@ def close_time(control_dist_km, brevet_dist_km, brevet_start_time):
        An arrow object indicating the control close time.
        This will be in the same time zone as the brevet start time.
     """
-    return arrow.now()
+    new_arrow = brevet_start_time
+    change = control_dist_km / 15
+    new_arrow = new_arrow.shift(hours=+change)
+    return new_arrow

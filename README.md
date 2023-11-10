@@ -20,7 +20,7 @@ We are essentially replacing the calculator here [https://rusa.org/octime_acp.ht
 	* Based on what was discussed in the lecture, create test cases, try them in the original website, and check if your functions correctly calculate the times.
 	* This will effectively replicate the calulator above.
 
-* Edit the template and Flask app so that the required remaining arugments are passed along.
+* Edit the template and Flask app so that the required remaining arguments are passed along.
 	* Currently the miles to kilometers (and some other basic stuff) is implemented with AJAX. 
 	* The remainder is left to you.
 
@@ -61,6 +61,14 @@ We should be able to run your test suite by changing to the `brevets` directory 
 
 * If none of the functionalities work, 10 points will be given assuming `credentials.ini` is submitted with the correct repo URL, and `Dockerfile` builds and runs without any errors. 
 
+## The Application
+
+This application calculates opening and closing times for brevet checkpoints.
+
+## The Algorithim
+
+The algorithim I use to calculate opening and closing times is simple. For the opening time (in hours from start,) I divide the distance of the control by 34, and for the closing time (in hours from start,) I do the same except dividing it by 15 instead.
+
 ## Authors
 
-Michal Young, Ram Durairajan. Updated by Ali Hassani.
+Carsten Konyn

@@ -123,8 +123,13 @@
               var km = control.find("input[name='km']").val();
               var open_time_field = control.find("input[name='open']");
               var close_time_field = control.find("input[name='close']");
-
-              $.getJSON(TIME_CALC_URL, {km: km}).done(
+              //var brevet_distance_km = control.find("input[name='distance']").val();
+              //var brevet_distance_km = $("#Distance").val();
+              var brevet_distance_km = document.getElementById("brevet_dist_km").value;
+              //var begin_date = control.find("input[name='begin_date']").val();
+              var begin_date = $("#begin_date").val();
+              //console.log("Test!");
+              $.getJSON(TIME_CALC_URL, {km: km, brevet_distance_km: brevet_distance_km, begin_date: begin_date}).done(
                 function(data) {
                    var times = data.result;
                    console.log("Got a response: ");
